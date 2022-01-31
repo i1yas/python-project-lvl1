@@ -16,8 +16,9 @@ def main():
     answers = []
 
     for _ in range(0, 3):
-        a = random.randint(1, 50)
-        b = random.randint(1, 50)
+        k = random.randint(2, 20)
+        a = k * random.randint(1, 20)
+        b = k * random.randint(1, 20)
 
         question = f'{a} {b}'
         answer = str(gcd(a, b))

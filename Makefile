@@ -2,7 +2,7 @@ install:
 	poetry install
 
 package-install:
-	python3 -m pip install --user dist/*.whl
+	python3 -m pip install --user dist/*.whl --force-reinstall
 	
 build:
 	poetry build
@@ -18,3 +18,6 @@ brain-games:
 
 brain-even:
 	poetry run brain-even
+
+brain-calc:
+	poetry run brain-calc

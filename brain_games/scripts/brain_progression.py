@@ -13,7 +13,8 @@ def main():
         step = random.randint(2, 10)
         start = 1
         stop = step * random.randint(5, 10)
-        progression = list(str(element) for element in range(start, stop, step))
+        progression = list(
+            str(element) for element in range(start, stop, step))
 
         unknown_element_pos = random.choice(
             [index for index, _ in enumerate(progression)])

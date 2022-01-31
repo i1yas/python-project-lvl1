@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 
 import random
+import math
 from brain_games import cli, game
-
-
-def gcd(a, b):
-    if b == 0:
-        return a
-    return gcd(b, a % b)
 
 
 def main():
@@ -21,7 +16,7 @@ def main():
         b = k * random.randint(1, 20)
 
         question = f'{a} {b}'
-        answer = str(gcd(a, b))
+        answer = str(math.gcd(a, b))
 
         questions.append(question)
         answers.append(answer)

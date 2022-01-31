@@ -1,32 +1,27 @@
 #!/usr/bin/env python
 
 import random
-import prompt
-from brain_games import cli
+from brain_games import cli, game
 
 
 def main():
     name = cli.welcome_user()
+    questions = []
+    answers = []
+
+    for _ in range(0, 3):
+        question = random.randint(1, 20)
+        answer = ['yes', 'no'][question % 2]
+        questions.append(question)
+        answers.append(answer)
 
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
-    n = 0
-    while n < 3:
-        n += 1
-        number = random.randint(1, 20)
-        answer = prompt.string(f'Question: {number}\nYour answer: ')
-        right_answer = ['yes', 'no'][number % 2]
-        if answer != right_answer:
-            break
-        else:
-            print('Correct!')
-    else:
-        print(f'Congratulations, {name}!')
-        return
-    print(
-        f'\'{answer}\' is wrong answer ;(. '
-        f'Correct answer was \'{right_answer}\'.')
-    print(f'Let\'s try again, {name}!')
+    game.run(
+        name=name,
+        questions=questions,
+        answers=answers
+    )
 
 
 if __name__ == "__main__":
